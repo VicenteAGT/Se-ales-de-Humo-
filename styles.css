@@ -1,0 +1,160 @@
+/* Aquí va la imagen de hoguera */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('hoguera.jpg'); /* Asegúrate de tener la imagen en la misma carpeta que este archivo CSS */
+    background-repeat: repeat; /* Repite la imagen en mosaico */
+    background-size: cover; /* Ajusta la imagen para cubrir toda el área disponible */
+    background-position: center; /* Centra la imagen en el área de fondo */
+    font-family: Arial, sans-serif; /* Fuente general para el texto */
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia para el encabezado */
+}
+
+h1 {
+    margin: 0;
+}
+
+#notification, #letter, #waiting-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%; /* Ajuste de ancho para dispositivos móviles */
+    max-width: 500px; /* Ancho máximo para pantallas más grandes */
+}
+
+#letter, #waiting-message {
+    display: none; /* Inicialmente oculto */
+}
+
+#notification {
+    display: block;
+}
+
+#waiting-message {
+    display: none; /* Inicialmente oculto */
+}
+
+button {
+    background-color: #ff6600;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #cc5200;
+}
+
+.hidden {
+    display: none;
+}
+
+#message-log {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 300px;
+    overflow-y: auto;
+    width: 90%; /* Ajuste de ancho para dispositivos móviles */
+    max-width: 500px; /* Ancho máximo para pantallas más grandes */
+}
+
+#message-log h2 {
+    margin-top: 0;
+}
+
+#message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#message-list li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#message-list li:hover {
+    background: #ffff99; /* Amarillo claro para el hover */
+}
+
+#message-list li::before {
+    content: '📥'; /* Icono de bandeja de entrada */
+    margin-right: 10px;
+}
+
+/* Estilo para el botón de reinicio */
+#reset-button {
+    position: fixed;
+    top: 10px; /* Ubicado a 10px del margen superior */
+    right: 10px; /* Ubicado a 10px del margen derecho */
+    background-color: #000; /* Negro */
+    color: #fff;
+    padding: 4px 8px; /* Tamaño mínimo de padding */
+    font-size: 10px; /* Tamaño de fuente pequeño */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté en la parte superior */
+}
+
+#reset-button:hover {
+    background-color: #333; /* Negro más oscuro al pasar el cursor */
+}
+
+/* Media Queries para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    #notification, #letter, #waiting-message {
+        width: 90%; /* Ancho ajustado para pantallas más pequeñas */
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px; /* Tamaño de fuente reducido en dispositivos móviles */
+        padding: 8px 16px; /* Tamaño de padding ajustado */
+    }
+
+    #message-log {
+        bottom: 10px; /* Ajuste de posición para pantallas más pequeñas */
+        left: 10px;
+        right: 10px; /* Alineación completa en pantallas pequeñas */
+    }
+
+    #reset-button {
+        top: 10px; /* Ubicado a 10px del margen superior */
+        right: 10px; /* Ubicado a 10px del margen derecho */
+        font-size: 10px; /* Tamaño de fuente reducido */
+        padding: 4px 8px; /* Tamaño de padding ajustado */
+    }
+}
